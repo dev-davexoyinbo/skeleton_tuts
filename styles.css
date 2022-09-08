@@ -1,0 +1,47 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #e2e2e2;
+    padding: 24px;
+}
+
+#skel-container {
+    display: none;
+}
+
+#skel-container.showing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+#skel-container > div {
+    min-height: 300px;
+    background: rgb(197, 197, 197);
+    border-radius: 8px;
+    animation-name: animate-skel-el;
+    animation-duration: 1000ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+#skel-container.showing + #main-content{
+    display: none;
+}
+
+@keyframes animate-skel-el {
+    0% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}
